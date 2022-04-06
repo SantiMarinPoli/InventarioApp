@@ -1,0 +1,24 @@
+﻿<input type="text" @bind-value="@inputValue" />
+<input type="button" value="Haga clic aqui" @onclick="changeText" />
+
+<div>
+    @message
+</div>
+
+@code
+{
+    [Parameter]
+    public string Message { get; set; }
+    string message = "Un Contenido";
+    string inputValue = "";
+
+    protected async void OnInitalizedAsync()
+    {
+        message = Message;
+    }
+
+    private void changeText()
+    {
+        message = inputValue;
+    }
+}
