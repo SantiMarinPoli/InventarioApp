@@ -1,0 +1,40 @@
+﻿@using Entities
+@using Business
+
+<hr />
+
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Entrada y Salida</th>
+            <th>Cantidad</th>
+            <th>Entrada</th>
+            <th>Almacenamiento</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var inout in inOuts)
+        {
+            <tr>
+                <td>@inout.InOutId</td>
+                <td>@inout.InOutDate</td>
+                <td>@inout.Quantity</td>
+                <td>@inout.IsInput</td>
+                <td>@inout.StorageId</td>
+                <td>
+                    <a href="inoutPut/update/@inout.InOutId">Editar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    List<InOutEntity> inOuts = new List<InOutEntity>();
+    protected override async Task OnInitializedAsync()
+    {
+        inOuts = B_InOut.InOutList();
+    }
+}

@@ -1,0 +1,49 @@
+﻿@using Entities
+@using Business
+@using Entities.Interface
+
+@inject NavigationManager NavManager
+<div>
+    <EditForm Model="oInOut">
+        <div class="form-group">
+            <label>Fecha Entrada y Salida: </label>
+            <InputDate @bind-Value="oInOut.InOutDate" class="form-control"></InputDate>
+        </div>
+        <div class="form-group">
+            <label>Cantidad: </label>
+            <InputNumber @bind-Value="oInOut.Quantity" class="form-control"></InputNumber>
+        </div>
+        <div class="form-group">
+            <label>Entrada: </label>
+            <InputCheckbox @bind-Value="oInOut.IsInput" class="form-control"></InputCheckbox>
+        </div>
+        <div class="form-group">
+            <label>Almacen: </label>
+            <InputSelect @bind-Value="oInOut.StorageId" class="form-control">
+                <option value="">Seleccionar Almacen...</option>
+                @foreach (var storage in storages)
+                {
+                    <option value="@storage.StorageId">@storage.LastUpdate</option>
+                }
+            </InputSelect>
+        </div>
+
+        <input type="button" value="Agregar Entrada y Salida" @onclick="SaveInOutPut" />
+    </EditForm>
+</div>
+
+@code {
+    InOutEntity oInOut = new InOutEntity();
+    List<StorageEntity> storages = new List<StorageEntity>();
+    protected override async Task OnInitializedAsync()
+    {
+        storages = B_Storage.StorageList();
+    }
+
+    private void SaveInOutPut()
+    {
+        oInOut.InOutId = Guid.NewGuid().ToString();
+        B_InOut.CRUDInOut(oInOut,IOperator.Create);
+        NavManager.NavigateTo("inoutPut/list");
+    }
+}

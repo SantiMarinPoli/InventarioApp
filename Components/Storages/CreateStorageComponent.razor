@@ -1,0 +1,57 @@
+﻿@using Entities
+@using Business
+@using Entities.Interface
+
+@inject NavigationManager NavManager
+<div>
+    <EditForm Model="oStorage">
+        <div class="form-group">
+            <label>Fecha Entrada: </label>
+            <InputDate @bind-Value="oStorage.LastUpdate" class="form-control"></InputDate>
+        </div>
+        <div class="form-group">
+            <label>Cantidad Parcial: </label>
+            <InputNumber @bind-Value="oStorage.PartialQuantity" class="form-control"></InputNumber>
+        </div>
+        <div class="form-group">
+            <label>Producto: </label>
+            <InputSelect @bind-Value="oStorage.ProductId" class="form-control">
+                <option value="">Seleccionar producto...</option>
+                @foreach (var product in products)
+                {
+                    <option value="@product.ProductId">@product.ProductName</option>
+                }
+            </InputSelect>
+        </div>
+        <div class="form-group">
+            <label>Deposito: </label>
+            <InputSelect @bind-Value="oStorage.WarehouseId" class="form-control">
+                <option value="">Seleccionar Deposito...</option>
+                @foreach (var warehouse in warehouses)
+                {
+                    <option value="@warehouse.WarehouseId">@warehouse.WarehouseName</option>
+                }
+            </InputSelect>
+        </div>
+
+        <input type="button" value="Agregar Almacenamiento" @onclick="SaveStorage" />
+    </EditForm>
+</div>
+
+@code {
+    StorageEntity oStorage = new StorageEntity();
+    List<ProductEntity> products = new List<ProductEntity>();
+    List<WarehouseEntity> warehouses = new List<WarehouseEntity>();
+    protected override async Task OnInitializedAsync()
+    {
+        warehouses = B_Warehouse.WarehouseList();
+        products = B_Product.ProductList();
+    }
+
+    private void SaveStorage()
+    {
+        oStorage.StorageId = Guid.NewGuid().ToString();
+        B_Storage.CRUDStorage(oStorage,IOperator.Create);
+        NavManager.NavigateTo("storage/list");
+    }
+}

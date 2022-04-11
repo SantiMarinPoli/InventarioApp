@@ -3,5 +3,3 @@ appsettings.Development.json
 .vs
 bin
 obj
-InventoryApp.csproj
-InventoryApp.sln
