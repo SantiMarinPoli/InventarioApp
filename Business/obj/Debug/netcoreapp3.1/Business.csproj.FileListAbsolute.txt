@@ -11,3 +11,16 @@ C:\Users\SANTI\source\repos\Business\obj\Debug\netcoreapp3.1\Business.AssemblyIn
 C:\Users\SANTI\source\repos\Business\obj\Debug\netcoreapp3.1\Business.csproj.CopyComplete
 C:\Users\SANTI\source\repos\Business\obj\Debug\netcoreapp3.1\Business.dll
 C:\Users\SANTI\source\repos\Business\obj\Debug\netcoreapp3.1\Business.pdb
+C:\Users\SANTI\source\InventoryApp\Business\bin\Debug\netcoreapp3.1\Business.deps.json
+C:\Users\SANTI\source\InventoryApp\Business\bin\Debug\netcoreapp3.1\Business.dll
+C:\Users\SANTI\source\InventoryApp\Business\bin\Debug\netcoreapp3.1\Business.pdb
+C:\Users\SANTI\source\InventoryApp\Business\bin\Debug\netcoreapp3.1\DataAccess.dll
+C:\Users\SANTI\source\InventoryApp\Business\bin\Debug\netcoreapp3.1\Entities.dll
+C:\Users\SANTI\source\InventoryApp\Business\bin\Debug\netcoreapp3.1\DataAccess.pdb
+C:\Users\SANTI\source\InventoryApp\Business\bin\Debug\netcoreapp3.1\Entities.pdb
+C:\Users\SANTI\source\InventoryApp\Business\obj\Debug\netcoreapp3.1\Business.csprojAssemblyReference.cache
+C:\Users\SANTI\source\InventoryApp\Business\obj\Debug\netcoreapp3.1\Business.AssemblyInfoInputs.cache
+C:\Users\SANTI\source\InventoryApp\Business\obj\Debug\netcoreapp3.1\Business.AssemblyInfo.cs
+C:\Users\SANTI\source\InventoryApp\Business\obj\Debug\netcoreapp3.1\Business.csproj.CopyComplete
+C:\Users\SANTI\source\InventoryApp\Business\obj\Debug\netcoreapp3.1\Business.dll
+C:\Users\SANTI\source\InventoryApp\Business\obj\Debug\netcoreapp3.1\Business.pdb
