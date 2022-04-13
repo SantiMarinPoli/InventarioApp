@@ -16,5 +16,6 @@ namespace Entities
         [StringLength(150)]
         public string WarehouseAddress { get; set; }
         public ICollection<StorageEntity> Storages { get; set; }
+
     }
 }
