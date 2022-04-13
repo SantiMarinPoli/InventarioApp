@@ -12,7 +12,7 @@
             <th>Fecha Entrada</th>
             <th>Cantidad Parcial</th>
             <th>Producto</th>
-            <th>Deposito</th>
+            <th>Bodega</th>
             <th></th>
         </tr>
     </thead>
@@ -23,10 +23,10 @@
             <td>@storage.StorageId</td>
             <td>@storage.LastUpdate</td>
             <td>@storage.PartialQuantity</td>
-            <td>@storage.ProductId</td>
-            <td>@storage.WarehouseId</td>
+            <td>@storage.Product.ProductName</td>
+            <td>@storage.Warehouse.WarehouseName</td>
             <td>
-                <a href="storage/update/@storage.StorageId">Editar</a>
+                <a class="btn btn-warning" href="storage/update/@storage.StorageId">Editar</a>
             </td>
         </tr>
         }

@@ -33,8 +33,9 @@
                     }
                 </InputSelect>
             </div>
-
-            <input type="button" value="Agregar Almacenamiento" @onclick="SaveStorage" />
+            <div class="form-group">
+                <input type="button" class="form-control btn btn-success" value="Agregar Almacenamiento" @onclick="SaveStorage" />
+            </div>
         </EditForm>
         @if (message != string.Empty)
         {
@@ -63,6 +64,7 @@
         if(!B_Storage.IsProductInWarehouse(idStorage))
         {
             oStorage.StorageId = idStorage;
+            oStorage.LastUpdate = DateTime.Now;
             B_Storage.CRUDStorage(oStorage,IOperator.Create);
             NavManager.NavigateTo("storage/list");
             message = $"Producto {oStorage.ProductId} Registrado";

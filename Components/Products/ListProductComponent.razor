@@ -17,6 +17,7 @@
         <tr>
             <th>Referencia</th>
             <th>Nom. Producto</th>
+            <th>Cantidad</th>
             <th>Categoria</th>
             <th></th>
         </tr>
@@ -27,9 +28,10 @@
             <tr>
                 <td>@product.ProductId</td>
                 <td>@product.ProductName</td>
-                <td>@product.CategoryId</td>
+                <td>@product.TotalQuantity</td>
+                <td>@product.Category.CategoryName</td>
                 <td>
-                    <a href="product/update/@product.ProductId">Editar</a>
+                    <a class="btn btn-warning" href="product/update/@product.ProductId">Editar</a>
                 </td>
             </tr>
         }

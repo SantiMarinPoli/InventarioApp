@@ -13,8 +13,9 @@
             <label>Nombre Categoria: </label>
             <InputText @bind-Value="oCategory.CategoryName" class="form-control"></InputText>
         </div>
-
-        <input type="button" value="Editar Categoria" @onclick="UpdateCategory" />
+        <div class="form-group">
+            <input type="button" class="form-control btn btn-success" value="Editar Categoria" @onclick="UpdateCategory" />
+        </div>
     </EditForm>
 </div>
 

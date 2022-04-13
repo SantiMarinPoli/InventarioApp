@@ -19,7 +19,9 @@
             <InputText @bind-Value="oWarehouse.WarehouseAddress" class="form-control"></InputText>
         </div>
 
-        <input type="button" value="Actualizar Deposito" @onclick="UpdateWarehouse" />
+        <div class="form-group">
+            <input type="button" class="form-control btn btn-success" value="Actualizar Deposito" @onclick="UpdateWarehouse" />
+        </div>
     </EditForm>
 </div>
 

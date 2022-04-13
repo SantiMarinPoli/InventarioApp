@@ -10,7 +10,7 @@
             <th>Entrada y Salida</th>
             <th>Cantidad</th>
             <th>Entrada</th>
-            <th>Almacenamiento</th>
+            <th>Producto</th>
             <th></th>
         </tr>
     </thead>
@@ -21,10 +21,17 @@
                 <td>@inout.InOutId</td>
                 <td>@inout.InOutDate</td>
                 <td>@inout.Quantity</td>
-                <td>@inout.IsInput</td>
-                <td>@inout.StorageId</td>
+                @if(inout.IsInput)
+                {
+                    <td>Entrada</td>
+                }
+                else
+                {
+                    <td>Salida</td>
+                }
+                <td>@inout.Storage.Product.ProductName</td>
                 <td>
-                    <a href="inoutPut/update/@inout.InOutId">Editar</a>
+                    <a class="btn btn-warning" href="inoutPut/update/@inout.InOutId">Editar</a>
                 </td>
             </tr>
         }

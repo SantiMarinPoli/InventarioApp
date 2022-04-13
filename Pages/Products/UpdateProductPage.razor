@@ -1,13 +1,17 @@
 ﻿@page "/product/update/{idProduct}"
 
+<hr />
+<a class="btn btn-primary" href="product/list">Regresar</a>
+<hr />
+
 <UpdateProductComponent idProduct="@idProduct"></UpdateProductComponent>
 
 @code{
     [Parameter]
     public string idProduct { get; set; }
-        protected override async Task OnInitializedAsync()
-        {
-            idProduct = idProduct;
-        }
+    protected override async Task OnInitializedAsync()
+    {
+        idProduct = idProduct;
+    }
 
 }
